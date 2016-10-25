@@ -1,7 +1,7 @@
 {
   "name": "onepercent-comp",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Onepercent components",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -46,5 +46,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "onepercent-comp": "*"
 }
