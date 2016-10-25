@@ -1,0 +1,54 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# When your editor does not support this .editorconfig file, you can download a plugin:
+
+# Atom : https://github.com/kidwm/brackets-editorconfig/
+# Brackets : https://github.com/kidwm/brackets-editorconfig/
+# Sublime : https://github.com/sindresorhus/editorconfig-sublime#readme
+# Vim : https://github.com/editorconfig/editorconfig-vim#readme
+# PyCharm : https://plugins.jetbrains.com/plugin/7294
+
+# editorconfig.org
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+# Frontend development
+
+[*.html]
+indent_style = space
+indent_size = 4
+
+[*.hbs]
+insert_final_newline = false
+indent_style = space
+indent_size = 4
+
+[*.sass]
+indent_style = space
+indent_size = 4
+
+[*.scss]
+indent_style = space
+indent_size = 4
+
+[*.js]
+indent_style = space
+indent_size = 4
+
+[*.json]
+indent_style = space
+indent_size = 4
+
+[*.{diff,md}]
+trim_trailing_whitespace = false
