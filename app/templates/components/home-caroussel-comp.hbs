@@ -1,0 +1,26 @@
+<div class="l-section home-carousel">
+      <section class="carousel default" {{bindAttr style=view.backgroundStyle}}>
+          <ul>
+              {{#each slideList as |slide|}}
+                  {{#if slide.video_url}}
+                      {{partial "slides_video"}}
+                  {{else}}
+                      {{partial "slides_default"}}
+                  {{/if}}
+              {{/each}}
+          </ul>
+          <div class="carousel-nav-holder {{if carouselActive "is-active"}} {{if carouselInActive "is-inactive"}}">
+              <div class="carousel-nav">
+                  {{#unless oneCarouselSlide}}
+                      {{#each slideList as |slide|}}
+                          <div {{bindAttr class=":carousel-nav-item slide.isFirst:is-active"}}>
+                              <span class="carousel-nav-item-text">
+                                  {{slide.tab_text}}
+                              </span>
+                          </div>
+                      {{/each}}
+                  {{/unless}}
+              </div>
+          </div>
+      </section>
+  </div>
