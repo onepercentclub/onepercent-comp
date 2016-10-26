@@ -1,9 +1,44 @@
-<div class="l-section" id="featured-on">
-    <section class="l-wrapper">
-        <div class="row">
-            <div class="col12">
-                {{yield}}
-            </div>
+{{#featured-on}}
+        <div id="press">
+            <ul>
+                <li class="press-intro">{{t "Featured on"}}</li>
+                <li>{{#link-to 'page' 'press'}}<img src="/images/pages/home/press-nos.png" alt="NOS" />{{/link-to}}</li>
+                <li>{{#link-to 'page' 'press'}}<img src="/images/pages/home/press-radio1.png" alt="Radio 1" />{{/link-to}}</li>
+                <li>{{#link-to 'page' 'press'}}<img src="/images/pages/home/press-nu.png" alt="NU.nl" />{{/link-to}}</li>
+                <li>{{#link-to 'page' 'press'}}<img src="/images/pages/home/press-pnw.png" alt="Pauw &amp; Witteman" />{{/link-to}}</li>
+                <li>{{#link-to 'page' 'press'}}<img src="/images/pages/home/press-dwdd.png" alt="De Wereld Draait Door" />{{/link-to}}</li>
+                <li>{{#link-to 'page' 'press'}}<img src="/images/pages/home/press-volkskrant.png" alt="Volkskrant" />{{/link-to}}</li>
+            </ul>
         </div>
-    </section>
-</div>
+
+        {{#quote-carousel}}
+            <ul>
+                <li>
+                    <div class="quote-carousel-content">
+                        <div class="carousel-photo">
+                            <img src="/images/pages/home/quote-mark-rutte.jpg">
+                        </div>
+                        <div class="carousel-quote">
+                            <strong>{{t "Een actiegerichte manier van denken die uitstekend past in deze tijd."}}</strong>
+                            <em>&#8212; {{t "Mark Rutte, Minister-president"}}</em>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="quote-carousel-content">
+                        <div class="carousel-photo">
+                            <img src="/images/pages/home/quote-heleen-van-oord.jpg">
+                        </div>
+                        <div class="carousel-quote">
+                            <strong>{{t "Met 1%Club kun je 100% het verschil maken. En het resultaat zien!"}}</strong>
+                            <em>&#8212; {{t "Heleen Dura - van Oord - Zakenvrouw van het jaar 2013"}}</em>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        {{/quote-carousel}}
+
+        <div class="tools-rocket">
+            <object type="image/svg+xml" data="/images/illustrations/illustration-rocket.svg"></object>
+        </div>
+    {{/featured-on}}
