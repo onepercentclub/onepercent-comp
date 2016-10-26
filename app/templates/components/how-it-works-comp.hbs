@@ -1,49 +1,32 @@
-<div class="l-section" id="how-it-works">
-        <div class="l-wrapper">
-            {{#how-it-works as |section|}}
-                {{#if (eq section 'header')}}
-                    <h1>{{t "How does it work?"}}</h1>
-                {{else if (eq section 'stepOne')}}
-                    <figure class="image">
-                        <object type="image/svg+xml" data="/images/pages/home/step-1.svg" class="tools-icon-image"></object>
-                    </figure>
-                    <h2>{{t "We are the do-good crowdfunding platform" }}</h2>
-                    <p>
-                        {{t "We empower people with great ideas
-                        to create positive change in their
-                        community, city, country – or in the
-                        world."}}
-                    </p>
-                {{else if (eq section 'stepTwo')}}
-                    <figure class="image">
-                        <object type="image/svg+xml" data="/images/pages/home/step-2.svg" class="tools-icon-image"></object>
-                    </figure>
-                    <h2>{{t "We have the fundraising tools to activate your network" }}</h2>
-                    <p>
-                        {{t "We enable you to raise funds and
-                        kick-start your initiative via your own
-                        network. We take care of
-                        administration and make sure you
-                        can eﬀectively share your campaign
-                        with your network."}}
-                    </p>
-                {{else if (eq section 'stepThree')}}
-                    <figure class="image">
-                        <object type="image/svg+xml" data="/images/pages/home/step-3.svg" class="tools-icon-image"></object>
-                    </figure>
-                    <h2>{{t "We are your best friend in online campaining" }}</h2>
-                    <p>
-                        {{t "We make campaigning for a better
-                        world the most simple and rewarding
-                        experience possible. We share our
-                        expertise and if you need help: we’re
-                        just a phone call or email away"}}
-                    </p>
-                {{else if (eq section 'footer')}}
-                    {{#load-more}}
-                        {{#link-to 'start-project' classNames='btn'}}{{t "Start your own project"}}{{/link-to}}
-                    {{/load-more}}
-                {{/if}}
-            {{/how-it-works}}
-        </div>
+<div class="how-it-works">
+    <div class="steps-container">
+        {{#unless hideHeader}}
+            <header class="section-header">
+                {{yield 'header'}}
+            </header>
+        {{/unless}}
+
+        {{#unless hideStepOne}}
+            <div class="step-item">
+                {{yield 'stepOne'}}
+            </div>
+        {{/unless}}
+
+        {{#unless hideStepTwo}}
+            <div class="step-item">
+                {{yield 'stepTwo'}}
+            </div>
+        {{/unless}}
+
+        {{#unless hideStepThree}}
+            <div class="step-item">
+                {{yield 'stepThree'}}
+            </div>
+        {{/unless}}
     </div>
+    {{#unless hideFooter}}
+        <footer>
+            {{yield 'footer'}}
+        </footer>
+    {{/unless}}
+</div>
