@@ -1,3 +1,13 @@
-{{#if statistics }}
-    {{home-impact statistics=statistics}}
-{{/if}}
+<header class="section-header">
+    <h1>{{t "Our impact" }}</h1>
+    <p>{{t "Together we can make a change. This is what we achieved so far." }}</p>
+</header>
+<ul class="impact-list">
+    {{#each statistics as |statistic|}}
+        <li>
+            <strong>{{localize-number value=statistic.value}}</strong>
+            <br />
+            {{statistic.title}}
+        </li>
+    {{/each}}
+</ul>

@@ -50,6 +50,5 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "onepercent-comp": "*"
+  }
 }
