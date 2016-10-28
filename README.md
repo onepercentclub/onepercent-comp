@@ -3,24 +3,15 @@
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
+To use this addon locally you need to link it.
 
-* `git clone` this repository
+* `cd onepercent-comp`
+* `npm link`
+* `cd ../styleguide` || `cd ../frontend`
+* `npm link onepercent-comp`
 * `npm install`
-* `bower install`
 
 ## Running
 
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+* `ember server --port 2400`
+* Visit your app at http://localhost:2400.
