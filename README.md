@@ -1,6 +1,6 @@
 # Onepercent-comp
 
-This README outlines the details of collaborating on this Ember addon.
+Onepercent components
 
 ## Installation
 To use this addon locally you need to link it.
