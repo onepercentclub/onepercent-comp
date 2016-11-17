@@ -1,0 +1,12 @@
+{{#if settings.closedSite}}
+    <li class="nav-signup-login">
+        <a class="nav-signin"><!--{{t "Sign in"}}-->Sign in</a>
+    </li>
+{{else}}
+    <li class="nav-signup-login">
+        <a {{action 'openInBox' 'login'}} class="nav-signin"><!--{{t "Sign in"}}-->Sign in</a>
+    </li>
+{{/if}}
+{{#if hasMultipleLanguages}}
+    <li class="nav-switch-language"></li>
+{{/if}}

@@ -1,0 +1,36 @@
+<ul {{bindAttr class=":nav-actions currentUser.isAuthenticated::logged-out"}}>
+    {{#if currentUser.isAuthenticated}}
+        <li class="nav-member">
+            {{partial "profile_anchor"}}
+            <ul class="nav-member-dropdown-menu">
+                <li>
+                    <ul>
+                        <li>
+                            <!--
+                            {{#link-to "userProfile"}}
+                                {{t "My Account"}}
+                            {{/link-to }}
+                            -->
+                            My Account
+                        </li>
+                        <!--{{partial "_account_links"}}-->
+                    </ul>
+                </li>
+
+                {{#if hasMultipleLanguages}}
+                    <li class="nav-member-switch-language">
+                        <!--
+                        <span>{{t "Language"}}</span> {{view "language-switch"}}
+                    -->
+                    </li>
+                {{/if}}
+
+                <li>
+                    <a {{action 'logout'}}>{{t "Sign out"}}</a>
+                </li>
+            </ul>
+        </li>
+    {{else}}
+        {{account-nav-anon-molecule}}
+    {{/if}}
+</ul>

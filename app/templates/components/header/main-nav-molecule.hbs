@@ -1,0 +1,22 @@
+<ul class="nav-main">
+    <li class="nav-main-item"><a class="" href="">Start a project</a></li>
+    <li class="nav-main-item"><a class="" href="">Search projects</a></li>
+    <li class="nav-main-item"><a class="" href="">About</a></li>
+    {{#each settings.links.main as |link|}}
+        <li class="nav-main-item {{link.name}}">
+            {{#if link.external}}
+                <a href="{{link.route}}" target="_blank">
+                    {{link.title}}
+                </a>
+            {{else if link.param}}
+                {{#link-to link.route link.param}}
+                    {{link.title}}
+                {{/link-to}}
+            {{else}}
+                {{#link-to link.route}}
+                    {{link.title}}
+                {{/link-to}}
+            {{/if}}
+        </li>
+    {{/each}}
+</ul>
