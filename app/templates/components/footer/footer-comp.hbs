@@ -1,0 +1,110 @@
+<div class="l-section" id="footer">
+    <div id="footer-links">
+        <div class="l-wrapper" id="footer-nav">
+            <div id="ember1498" class="ember-view accordion-item">
+                <div class="footer-nav-item about">
+                    <div class="item-content">
+                        <h3>About the platform</h3>
+                        <div id="ember1507" class="ember-view">
+                            <li class=""><a id="ember1508" class="ember-view" href="/en/pages/how-it-works">How it works</a> </li>
+                            <li class=""><a id="ember1510" class="ember-view" href="/en/pages/get-involved">Get involved</a></li>
+                            <li class=""><a id="ember1512" class="ember-view" href="/en/pages/story">Our story</a></li>
+                            <li class=""><a id="ember1514" class="ember-view" href="/en/pages/meet-the-team">Meet the team</a></li>
+                            <li class=""><a id="ember1516" class="ember-view" href="/en/news">News</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ember1544" class="ember-view accordion-item">
+                <div class="footer-nav-item info">
+                    <div class="item-content">
+                        <h3>Info</h3>
+                        <div id="ember1545" class="ember-view">
+                            <li class=""><a id="ember1546" class="ember-view" href="/en/pages/faq">Frequently Asked Questions</a></li>
+                            <li class=""><a id="ember1548" class="ember-view" href="/en/pages/results-and-impact">Results &amp; Impact</a></li>
+                            <li class=""><a id="ember1550" class="ember-view" href="/en/pages/contact">Contact</a></li>
+                            <li class=""><a id="ember1552" class="ember-view" href="/en/pages/privacy">Privacy policy</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ember1554" class="ember-view accordion-item">
+                <div class="footer-nav-item discover">
+                    <div class="item-content">
+                        <h3>Discover</h3>
+                        <div id="ember1555" class="ember-view">
+                            <li class=""><a id="ember1556" class="ember-view" href="/en/start-project">Start a project</a></li>
+                            <li class=""><a id="ember1558" class="ember-view" href="/en/projects">Search projects</a></li>
+                            <li class=""><a id="ember1560" class="ember-view" href="/en/tasks">Find a task</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ember1585" class="ember-view accordion-item">
+                <div class="footer-nav-item social">
+                    <div class="item-content">
+                        <h3>Social Media</h3>
+                        <div id="ember1586" class="ember-view">
+                            <li class="social-facebook">
+                                <a target="_blank" href="https://www.facebook.com/bookingcares">Facebook</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{#unless settings.links.hideFooterContact}}
+        <div class="l-section" id="footer-contact">
+            <div class="l-wrapper">
+                <div class="row">
+                    <div class="col12">
+                        <p>You can always contact us for questions via <a href="mailto:{{env.APP.contact.email}}">{{env.APP.contact.email}}</a>
+                            {{#if env.APP.contact.phone}}and <a href="tel:{{compact-phone-number env.APP.contact.phone}}">{{env.APP.contact.phone}}</a>{{/if}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/unless}}
+
+    <div class="l-section" id="footer-copyright">
+        <div class="l-wrapper">
+            <div class="row">
+
+                {{#if settings.links.media.length}}
+                    {{footer-partner links=settings.links.media}}
+                {{/if}}
+
+                <div class="col12 copy powered-by">
+                    <p class="{{unless settings.links.footerCopyrightLink 'is-inactive'}}">
+                        <div class="footer-copyright">
+                            &copy; 2017
+                            {{#if env.APP.copyright}}
+                                {{env.APP.copyright}}
+                            {{/if}}
+                            {{#if settings.links.footerLink}}
+                                {{#if settings.links.footerLinkTarget}}
+                                    <a href="{{settings.links.footerLinkTarget}}" target="_blank">
+                                        <span class="footer-logo"><img src="{{settings.links.footerLink}}"/></span>
+                                    </a>
+                                {{else}}
+                                    <span class="footer-logo"><img src="{{settings.links.footerLink}}"/></span>
+                                {{/if}}
+                            {{/if}}
+                        </div>
+
+                        {{#if settings.links.footerCopyrightLink}}
+                            <a href="http://partners.onepercentclub.com">
+                                <span class="powered-text">- Powered by </span>
+                                <span class="copyright-logo"></span>
+                            </a>
+                        {{/if}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
