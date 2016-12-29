@@ -1,0 +1,40 @@
+<article id="search-navigation">
+    <div class="search-pagination">
+        {{#load-more loadData=isLoading}}
+            {{#if hasMore}}
+                <a {{action 'showMore'}} class="btn">Show {{next}} more"</a>
+            {{else}}
+                {{#if count}}
+                    <div class="all-projects-loaded">
+                        <span>
+                            {{count}} {{pluralize amount=count singular=(t 'project in total') plural=(t 'projects in total')}}
+                        </span>
+                        <a {{action 'focusSearch'}}>Try a new search</a>
+                    </div>
+                {{else}}
+                    <div class="no-projects">
+                        <span>
+                            {{#if projectSearch}}
+                                No projects found
+                            {{else}}
+                                No tasks found
+                            {{/if}}
+                        </span>
+                        <p>
+                            Try using different filters to broaden your search.
+                        </p>
+                        <a {{action 'focusSearch'}} class="btn btn-sec">"Try a new search"</a>
+                        {{#unless settings.links.hideStartProjectSearch}}
+                            <div class="start-project-instead">
+
+                                {{#link-to 'start-project'}}
+                                    Or start your own project now
+                                {{/link-to}}
+                            </div>
+                        {{/unless}}
+                    </div>
+                {{/if}}
+            {{/if}}
+        {{/load-more}}
+    </div>
+</article>

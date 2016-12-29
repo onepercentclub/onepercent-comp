@@ -1,0 +1,19 @@
+<div class="search">
+    <div class="search-form">
+        <div class="control-search">
+            <a {{action 'clearForm'}} class="search-reset"><span>clear search</span></a>
+        </div>
+        <div class="control-search-filter">
+            {{#unless taskSearch}}
+                {{search-page/search/project-search-form
+                    searchQuery=searchQuery
+                    sortOrders=sortOrders}}
+            {{else}}
+                {{search-page/search/task-search-form
+                    searchQuery=searchQuery
+                    taskStatuses=taskStatuses
+                    sortOrders=sortOrders}}
+            {{/unless}}
+        </div>
+</div>
+</div>

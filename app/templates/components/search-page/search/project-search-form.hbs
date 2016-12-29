@@ -1,0 +1,77 @@
+<div class="control">
+    <label for="">Show me </label>
+    {{search-page/search/select-project-type
+        prompt=all
+        projectStatus=searchQuery.status
+        projectType=searchQuery.project_type}}
+</div>
+{{#if lists.locations.length}}
+    <div class="control">
+        <label for="">projects from</label>
+        {{search-page/search/select-box
+            content=lists.locations
+            name='location'
+            optionValuePath="id"
+            optionLabelPath="name"
+            prompt= "all locations"
+            value=searchQuery.location }}
+    </div>
+{{else}}
+    <div class="control">
+        <label for="">projects from</label>
+        {{search-page/search/select-box
+            content=lists.used_countries
+            name='country'
+            optionValuePath="id"
+            optionLabelPath="localized_name"
+            prompt='all countries'
+            value=searchQuery.country }}
+    </div>
+{{/if}}
+{{#if settings.searchOptions.show_category }}
+    <div class="control">
+        <label for="">in </label>
+        {{search-page/search/select-box
+            name='category'
+            value=searchQuery.category
+            content=lists.categories
+            optionValuePath="id"
+            optionLabelPath="title"
+            prompt="any category" }}
+    </div>
+{{else}}
+    <div class="control">
+        <label for="">about</label>
+        {{search-page/search/select-box
+            value=searchQuery.theme
+            name='theme'
+            content=lists.used_themes
+            optionValuePath="id"
+            optionLabelPath="localized_name"
+            prompt="any theme"}}
+    </div>
+{{/if}}
+
+<div class="control">
+    <label for="">sorted by</label>
+    {{search-page/search/select-box
+        value=searchQuery.ordering
+        name='ordering'
+        content=sortOrders
+        optionValuePath="id"
+        optionLabelPath="name"
+        prompt="pick an order"}}
+</div>
+
+{{#if showCategory}}
+    <div class="control">
+        <label for="">in the category </label>
+        {{search-page/search/select-box
+            value=searchQuery.category
+            name='category'
+            content=currentCategory
+            optionValuePath="id"
+            optionLabelPath="title"
+            prompt="any theme"}}
+    </div>
+{{/if}}

@@ -1,0 +1,68 @@
+<div id="search-top-header" style="background-image:url('{{headerImage}}')" class="{{unless isNormalSearch 'normal-search'}} {{if isReadMore 'is-read-more'}}">
+    {{#if headerImageLogo}}
+        <span class="header-image-logo">
+            <img src="{{headerImageLogo}}" alt="">
+        </span>
+    {{/if}}
+    <div class="l-wrapper">
+        {{#if headerData}}
+            <h2 class="title">{{if headerData.name headerData.name headerData.title}}</h2>
+            <p class="description">{{{headerData.description}}}</p>
+            <a {{action 'readMore'}} class="more-info read-more">
+                {{#if isReadMore}}
+                    Less info
+                {{else}}
+                    More info
+                {{/if}}
+            </a>
+        {{else}}
+            <h2 class="title">
+                {{#unless taskSearch}}
+                    {{#if projectCount}}
+                        {{projectCount}} {{pluralize amount=projectCount singular=(t 'project found') plural=(t 'projects found')}}
+                    {{else}}
+                        Search & support do-good projects
+                    {{/if}}
+                {{else}}
+                    {{#if projectCount}}
+                        {{projectCount}} {{pluralize amount=projectCount singular=(t 'task found') plural=(t 'tasks found')}}
+                    {{else}}
+                        Search for tasks
+                    {{/if}}
+                {{/unless}}
+            </h2>
+            <small class="subtext">
+                    {{#unless taskSearch}}
+                        Search for specific projects in your area within a date range.<br> Or <a data-ember-link-to="taskList"> search for task</a> instead.'
+
+                    {{else}}
+                        'Search for specific tasks in your area within a date range.<br> Or <a data-ember-link-to="projectList"> search for project</a> instead.'
+
+                    {{/unless}}
+            </small>
+        {{/if}}
+    </div>
+
+    <div class="search-form">
+        <div class="control-search">
+            {{search/search-input
+                value=searchQuery.text
+                optionText=projectCount
+                taskSearch=taskSearch}}
+            <a {{action 'clearForm'}} class="search-reset"><span>clear search</span></a>
+        </div>
+
+        <div class="control-search-filter">
+            {{#unless taskSearch}}
+                {{search/project-search-form
+                    searchQuery=searchQuery
+                    sortOrders=sortOrders}}
+            {{else}}
+                {{search/task-search-form
+                    searchQuery=searchQuery
+                    taskStatuses=taskStatuses
+                    sortOrders=sortOrders}}
+            {{/unless}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div {{action "toggleMenu"}} class="select-box {{if isShowMenu 'is-active'}} {{if activeSelectBox 'is-active-select'}} {{if calendarIsLocked 'is-locked'}}">
+    {{#if activeSelectBox}}
+        <span {{action 'clearSelect'}} class="clear-select"></span>
+    {{/if}}
+    <span class="value">
+        {{selectedValue}}
+    </span>
+    {{#if showOptions }}
+    <div class="box-hover">
+        <div class="box select-calendar">
+            <span class="arrow"></span>
+            <ul class="options {{if calendarIsOpen 'calendar-is-open'}}">
+                <li>
+                    <a {{action 'nextDays' 7 }}>Next 7 days</a>
+                </li>
+                <li>
+                    <a {{action 'nextDays' 30 }}>Next 30 days</a>
+                </li>
+                <li>
+                    <a {{action 'showStartDate'}} class="specific-day-btn {{if specificDay 'is-active'}}">Specific day</a>
+                </li>
+                <li>
+                    <a {{action 'showStartDateEndDate'}} class="specific-range-btn {{if  specificRange 'is-active'}}">Specific range"</a>
+                </li>
+            </ul>
+            <div class="calendar-container">
+                <div class="specific-day {{if specificDay 'is-active'}}">
+                    <input id="single">
+                </div>
+                <div class="specific-range {{if specificRange 'is-active'}}">
+                    <input id="range">
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</div>

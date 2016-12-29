@@ -1,0 +1,48 @@
+<div {{action "toggleMenu"}} class="select-box {{if isShowMenu 'is-active'}} {{if activeSelectBox 'is-active-select'}}">
+    {{#if activeSelectBox}}
+        <span {{action 'clearSelect'}} class="clear-select"></span>
+    {{/if}}
+    <span class="value">
+        {{selectedValue}}
+    </span>
+    <div class="box-hover">
+        <div class="box">
+            <span class="arrow"></span>
+            <div class="options-container">
+                <ul class="options">
+                    <li>
+                        <a {{action 'unselectAll'}} {{bind-attr class="selected::isActive"}}>
+                            {{prompt}}
+                        </a>
+                    </li>
+                    {{#if types }}
+                    {{#each types as |option|}}
+                    <li>
+                        {{search-page/search/select-box-option
+                            option=option
+                            selected=projectType
+                            optionValuePath=optionValuePath
+                            optionLabelPath=optionLabelPath
+                            selectOption='selectType'}}
+                        </li>
+                        {{/each}}
+                        <li class="clear-hr"></li>
+                        <li class="hr-elm">
+                            <span class="hr"></span>
+                        </li>
+                        {{/if}}
+                        {{#each statuses as |option|}}
+                        <li>
+                            {{search-page/search/select-box-option
+                                option=option
+                                selected=projectStatus
+                                optionValuePath=optionValuePath
+                                optionLabelPath=optionLabelPath
+                                selectOption='selectStatus'}}
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+    </div>
+</div>

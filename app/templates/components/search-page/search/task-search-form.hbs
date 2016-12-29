@@ -1,0 +1,59 @@
+<div class="control">
+    <label for="">Show me</label>
+    {{search-page/search/select-box
+        value=searchQuery.status
+        name='status'
+        content=taskStatuses
+        optionValuePath="id"
+        optionLabelPath="name"
+        prompt="all"}}
+</div>
+
+<div class="control">
+    <label for="">tasks with</label>
+    {{search-page/search/select-box
+        content=lists.skills
+        name='skill'
+        optionValuePath="id"
+        optionLabelPath="localized_name"
+        prompt="any skill"
+        value=searchQuery.skill }}
+</div>
+
+<div class="control">
+    <label for="">expertise</label>
+</div>
+
+{{#if lists.locations.length}}
+    <div class="control">
+        <label for="">located in</label>
+        {{search-page/search/select-box
+            content=lists.locations
+            name='location'
+            optionValuePath="id"
+            optionLabelPath="name"
+            prompt="all locations"
+            value=searchQuery.location }}
+    </div>
+{{else}}
+    <div class="control">
+        <label for="">located in</label>
+        {{search-page/search/select-box
+            content=lists.used_countries
+            name='country'
+            optionValuePath="id"
+            optionLabelPath="localized_name"
+            prompt="all countries"
+            value=searchQuery.country }}
+    </div>
+{{/if}}
+
+<div class="control">
+    <label for="">on</label>
+    {{search-page/search/select-calendar
+        start=searchQuery.start
+        end=searchQuery.end
+        name='date'
+        content=sortOrders
+        prompt="pick a date"}}
+</div>

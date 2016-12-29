@@ -1,0 +1,32 @@
+<div {{action "toggleMenu"}} class="select-box {{if isShowMenu 'is-active'}} {{if activeSelectBox 'is-active-select'}}">
+    {{#if activeSelectBox}}
+        <span {{action 'clearSelect'}} class="clear-select"></span>
+    {{/if}}
+    <span class="value">
+        {{selectedValue}}
+    </span>
+    {{#if showOptions }}
+    <div class="box-hover">
+        <div class="box">
+            <span class="arrow"></span>
+            <ul class="options">
+                <li>
+                    <a {{action 'selectOption'}} {{bind-attr class="value::isActive"}}>
+                        {{prompt}}
+                    </a>
+                </li>
+                {{#each content as |option|}}
+                <li>
+                    {{search/select-box-option
+                        option=option
+                        selected=value
+                        optionValuePath=optionValuePath
+                        optionLabelPath=optionLabelPath
+                        selectOption='selectOption'}}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{/if}}
+</div>
