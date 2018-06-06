@@ -6,10 +6,10 @@ Onepercent components
 To use this addon locally you need to link it.
 
 * `cd onepercent-comp`
-* `npm link`
+* `yarn link`
 * `cd ../styleguide` || `cd ../frontend`
-* `npm link onepercent-comp`
-* `npm install`
+* `yarn link "onepercent-comp"`
+* `yarn (--ignore-engines)`
 
 ## Running
 
